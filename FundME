@@ -13,7 +13,7 @@ contract fundMe
 
     function fund() public payable 
     {
-    require(msg.value >= minimumUsd, "You need to spend more ETH!");
+    require(getconversionRate(msg.value) >= minimumUsd, "You need to spend more ETH!");
     }
 
 function getprice() public view returns (uint256) {
